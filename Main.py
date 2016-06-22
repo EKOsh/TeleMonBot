@@ -219,8 +219,6 @@ cls()
 bottt()
 print 'Connection established'
 print 'I am listening, Father...'
-#bot.sendMessage(-131517962, 'I am powered on!')
-#screenmsg('/showmeyourscreen@EKOshTower_bot')
 powered = ON.create(power_on_state='OK', d_t=str(datetime.datetime.now()))
 powered.save()
 
