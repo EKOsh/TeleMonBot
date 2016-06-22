@@ -1,5 +1,5 @@
 # TeleMonBot
-Monitor your Windows/Linux server via Telegram + ThingSpeak
+Monitor and log to SQLite your Windows/Linux server via Telegram + ThingSpeak
 
 Python 2,7 script
 
