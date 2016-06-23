@@ -9,4 +9,4 @@ The code is really raw right now... But, well, you can use it and tell me about 
 
 For read before sleep: www.thingspeak.com/ www.telegram.org/
 
-Huge THANKS to GitHub user Nick Lee! Check out his project github.com/nickoala/telepot
+Huge THANKS to GitHub user Nick Lee! Check out his project www.github.com/nickoala/telepot
