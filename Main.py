@@ -23,8 +23,7 @@ import os
 import random
 import httplib, urllib
 from PyQt4.QtGui import *
-from PyQt4 import *
-import ctypes
+#from PyQt4 import *
 from uptime import uptime as uppp
 from peewee import *
 
@@ -49,8 +48,8 @@ def ConfigSectionMap(section):
 
 global TGtoken
 global TStoken
-TGtoken = ConfigSectionMap("SectionOne")['telegram']
-TStoken = ConfigSectionMap("SectionOne")['thingspeak']
+TGtoken = ConfigSectionMap("Tokens")['telegram']
+TStoken = ConfigSectionMap("Tokens")['thingspeak']
 
 
 db = SqliteDatabase('botdb.db')
