@@ -23,7 +23,7 @@ Huge THANKS to GitHub user Nick Lee! Check out his project www.github.com/nickoa
 
 > sudo chmod +x inst.sh && sudo ./inst.sh
 
-- Now, open the config.ini file with any editor, paste your telegram bot api code and thingspeak channel write code (I think you got them while your before_sleep_readind) and save+close it
+- Now, open the config.ini file with any editor, paste your telegram bot api code and thingspeak channel write code (I think you got them while your before_sleep_reading) and save+close it
 
 Are you excited? *Let’s run it!*
 
