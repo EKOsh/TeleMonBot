@@ -16,17 +16,17 @@ Installation (Linux):
 
 Clone my code to your lovely linux pc:
 
-git clone https://github.com/EKOsh/TeleMonBot TeleMonBot && cd TeleMonBot
+$  git clone https://github.com/EKOsh/TeleMonBot TeleMonBot && cd TeleMonBot
 
 Install all libs + SQLite DB browser and create a DB for future logging:
 
-sudo chmod +x inst.sh && sudo ./inst.sh
+$  sudo chmod +x inst.sh && sudo ./inst.sh
 
 Now, open the config.ini file with any editor, paste your telegram bot api code and thingspeak channel write code (I think you got them while your before_sleep_readind) and save+close it
 
 Are you excited? Let’s run it!
 
-sudo python Main.py
+$  sudo python Main.py
 
 If everything is OK, you will get your terminal look like this:
 
