@@ -24,8 +24,8 @@ from peewee import *
 
 global TGtoken
 global TStoken
-TGtoken = 'Enter your Telegram token here / Вставь сюда свой токен телеграма'
-TStoken = 'Enter your ThingSpeak write token here / Вставь сюда свой код доступа к ThingSpeak'
+TGtoken = 'Telegram token here / токен телеграма'
+TStoken = 'Thingspeak key / ключ thinspeak'
 
 
 db = SqliteDatabase('botdb.db')
@@ -167,28 +167,28 @@ def screenmsg(chat_id, command):
 
 
 def rampd(chat_id, command):
-    if command == 'RAM usage'
+    if command == 'RAM usage':
         bot.sendMessage(chat_id, 'Nearly {}% of RAM is used.'.format(memory_usage_resource()))
 
 
 def daddypd(chat_id, command):
-    if command == 'Who is your creator?'
+    if command == 'Who is your creator?':
         bot.sendMessage(chat_id, 'His nick is E_KOsh...')
         bot.sendMessage(chat_id, "You might want to write him... Don't be so shy - @E_KOsh")
 
 
 def cpupd(chat_id, command):
-    if (command == 'CPU usage'
+    if command == 'CPU usage':
         bot.sendMessage(chat_id, "About {}% of my CPU power is used.".format(cpu_percent()))
 
 
 def ostimepd(chat_id, command):
-    if command == 'What is the time?'
+    if command == 'What is the time?':
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
 
 
 def uptimepd(chat_id, command):
-    if command == 'Uptime'
+    if command == 'Uptime':
         u = round(uppp() / 3600, 1)
         bot.sendMessage(chat_id, 'I am already working for {} hours.'.format(u))
 
@@ -219,6 +219,8 @@ cls()
 bottt()
 print 'Connection established'
 print 'I am listening, Father...'
+#bot.sendMessage(-131517962, 'I am powered on!')
+#screenmsg('/showmeyourscreen@EKOshTower_bot')
 powered = ON.create(power_on_state='OK', d_t=str(datetime.datetime.now()))
 powered.save()
 
