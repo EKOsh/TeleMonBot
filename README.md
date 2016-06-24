@@ -30,6 +30,7 @@ sudo python Main.py
 
 If everything is OK, you will get your terminal look like this:
 
+![My image](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
 
 
 
