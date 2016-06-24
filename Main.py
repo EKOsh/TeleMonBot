@@ -49,8 +49,8 @@ def ConfigSectionMap(section):
 
 global TGtoken
 global TStoken
-TGtoken = ConfigSectionMap("SectionOne")['Telegram']
-TStoken = ConfigSectionMap("SectionOne")['Thingspeak']
+TGtoken = ConfigSectionMap("SectionOne")['telegram']
+TStoken = ConfigSectionMap("SectionOne")['thingspeak']
 
 
 db = SqliteDatabase('botdb.db')
