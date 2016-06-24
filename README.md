@@ -1,9 +1,10 @@
 ﻿# TeleMonBot
 Monitor and log to SQLite your Windows/Linux server via Telegram + ThingSpeak (freaky, yep?)
 
-Python 2,7 script
+Python 2.7 script
 
 Used python libraries: psutil, telepot, PyQt4 and peewee
+> Don't install them, the code will install them itself
 
 The code is really raw right now... But, well, you can use it and tell me about your experience. My telegram is @E_KOsh. Email e.m.koshmin@gmail.com
 
@@ -16,17 +17,17 @@ Huge THANKS to GitHub user Nick Lee! Check out his project www.github.com/nickoa
 
 Clone my code to your lovely linux pc:
 
-$  git clone https://github.com/EKOsh/TeleMonBot TeleMonBot && cd TeleMonBot
+> git clone https://github.com/EKOsh/TeleMonBot TeleMonBot && cd TeleMonBot
 
 Install all libs + SQLite DB browser and create a DB for future logging:
 
-$  sudo chmod +x inst.sh && sudo ./inst.sh
+> sudo chmod +x inst.sh && sudo ./inst.sh
 
 Now, open the config.ini file with any editor, paste your telegram bot api code and thingspeak channel write code (I think you got them while your before_sleep_readind) and save+close it
 
 Are you excited? Let’s run it!
 
-$  sudo python Main.py
+> sudo python Main.py
 
 ## If everything is OK, you will get your terminal look like this:
 
