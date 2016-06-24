@@ -32,3 +32,32 @@ Are you excited? *Let’s run it!*
 ## If everything is OK, you will get your terminal look like this:
 
 ![Terminal](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
+
+## Command List
+
+Returns RAM usage in %
+> RAM usage
+
+Returns CPU usage in %
+> CPU usage
+
+Find out system uptime
+> Uptime
+
+And time
+> What is the time?
+
+Sends you a screenshot
+> Screenshot
+
+Tells where is he:
+> Where are you?
+
+Bot says what you ask him to say
+> Say: ...
+
+Helps to make a random choise
+> Say, ... or ...
+
+Final
+> Who is your creator?
