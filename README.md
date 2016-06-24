@@ -31,8 +31,3 @@ $  sudo python Main.py
 ## If everything is OK, you will get your terminal look like this:
 
 ![Terminal](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
-
-[Telegram](www.telegram.org/)
-[ThingSpeak](www.thingspeak.com/)
-
-
