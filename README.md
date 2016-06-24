@@ -1,5 +1,5 @@
 ﻿# TeleMonBot
-Monitor and log to SQLite your Windows/Linux server via Telegram + ThingSpeak (freaky, yep?)
+Monitor and log to SQLite your Windows/Linux server via [Telegram][] + [ThingSpeak][] (freaky, yep?)
 
 Python 2,7 script
 
@@ -12,7 +12,7 @@ For read before sleep: www.thingspeak.com/ www.telegram.org/
 Huge THANKS to GitHub user Nick Lee! Check out his project www.github.com/nickoala/telepot
 
 
-Installation (Linux):
+## Installation (Linux):
 
 Clone my code to your lovely linux pc:
 
@@ -28,10 +28,11 @@ Are you excited? Let’s run it!
 
 $  sudo python Main.py
 
-If everything is OK, you will get your terminal look like this:
+## If everything is OK, you will get your terminal look like this:
 
 ![Terminal](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
 
-
+[Telegram]: www.telegram.org/
+[ThingSpeak]: www.thingspeak.com/
 
 
