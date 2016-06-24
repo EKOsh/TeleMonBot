@@ -35,29 +35,31 @@ Are you excited? *Let’s run it!*
 
 ## Command List
 
-Returns RAM usage in %
+Returns RAM usage in %:
 > RAM usage
 
-Returns CPU usage in %
+Returns CPU usage in %:
 > CPU usage
 
-Find out system uptime
+Find out system uptime:
 > Uptime
 
-And time
+And time:
 > What is the time?
 
-Sends you a screenshot
+Sends you a screenshot:
 > Screenshot
 
 Tells where is he:
 > Where are you?
 
-Bot says what you ask him to say
+Bot says what you ask him to say:
 > Say: ...
 
-Helps to make a random choise
+Helps to make a random choise:
 > Say, ... or ...
 
-Final
+Final:
 > Who is your creator?
+
+Returns a link to my telegram:)
