@@ -1,9 +1,18 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-#Поставь все эти библиотеки через PIP
-#Install all these libraries via PIP
-#<pip install *имя библиотеки/library name*>
+#
+#  TeleMonBot
+#  Monitor and log to SQLite your Windows/Linux server via Telegram + ThingSpeak
+#
+#  Main.py
+#  
+#  Copyright 2016... Forget about it - use as you want
+#  But, I will be pleased go get some feedback (e.m.koshmin@gmail.com)
+#   
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# 
 
 from psutil import *
 import sys
@@ -13,19 +22,35 @@ import telepot
 import os
 import random
 import httplib, urllib
-from PIL import Image
 from PyQt4.QtGui import *
 from PyQt4 import *
-from PIL import *
 import ctypes
 from uptime import uptime as uppp
-import xlsxwriter
 from peewee import *
+
+import ConfigParser
+Config = ConfigParser.ConfigParser()
+Config.read('config.ini')
+
+
+def ConfigSectionMap(section):
+    dict1 = {}
+    options = Config.options(section)
+    for option in options:
+        try:
+            dict1[option] = Config.get(section, option)
+            if dict1[option] == -1:
+                DebugPrint("skip: %s" % option)
+        except:
+            print("exception on %s!" % option)
+            dict1[option] = None
+    return dict1
+    
 
 global TGtoken
 global TStoken
-TGtoken = 'Telegram token here / токен телеграма'
-TStoken = 'Thingspeak key / ключ thinspeak'
+TGtoken = ConfigSectionMap("SectionOne")['Telegram']
+TStoken = ConfigSectionMap("SectionOne")['Thingspeak']
 
 
 db = SqliteDatabase('botdb.db')
@@ -59,12 +84,6 @@ class LOAD(Model):
 
 
 db.connect()
-
-#После первого запуска закомментируй эти 3 строчки
-#Comment these 3 rows after the first start
-db.create_tables([LOAD])
-db.create_tables([MSGS])
-db.create_tables([ON])
 
 
 last_worktime = 0
@@ -107,8 +126,8 @@ def doit():
     cls()
     bottt()
     # print "    ########################################################################"
-    print "    ##              Cpu load is: " + str(cpu_pc) + "%. " + "Memory load is: " + str(
-        meme) + "%.              ##"
+    print "    ##             Cpu load is: " + str(cpu_pc) + "%. " + "Memory load is: " + str(
+        meme) + "%.             ##"
     print "    ########################################################################"
     for (status, reason) in responsee:
         print "    ##             Logged to TS. Answer is: {} and that's {}             ##".format(str(status),
