@@ -1,5 +1,5 @@
 ﻿# TeleMonBot
-Monitor and log to SQLite your Windows/Linux server via [Telegram][] + [ThingSpeak][] (freaky, yep?)
+Monitor and log to SQLite your Windows/Linux server via Telegram + ThingSpeak (freaky, yep?)
 
 Python 2,7 script
 
@@ -32,7 +32,7 @@ $  sudo python Main.py
 
 ![Terminal](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
 
-[Telegram]: www.telegram.org/
-[ThingSpeak]: www.thingspeak.com/
+[Telegram][www.telegram.org/]
+[ThingSpeak][www.thingspeak.com/]
 
 
