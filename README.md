@@ -3,6 +3,9 @@ Monitor and log to SQLite your Windows/Linux server via Telegram + ThingSpeak (f
 
 Python 2.7 script
 
+Write to my bot and see how it works:
+> https://telegram.me/EKOshTower_bot
+
 Used python libraries: psutil, telepot, PyQt4 and peewee
 > Don't install them, the code will install them itself
 
