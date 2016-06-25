@@ -116,25 +116,30 @@ def memory_usage_resource():
 def doit():
     cpu_pc = cpu_percent()
     meme = memory_usage_resource()
-    params = urllib.urlencode({'field1': cpu_pc, 'field2': meme, 'key': TStoken})
-    headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
-    conn = httplib.HTTPConnection("api.thingspeak.com:80")
-    conn.request("POST", "/update", params, headers)
-    response = conn.getresponse()
-    responsee = [(response.status, response.reason)]
     cls()
     bottt()
     # print "    ########################################################################"
     print "    ##             Cpu load is: " + str(cpu_pc) + "%. " + "Memory load is: " + str(
         meme) + "%.             ##"
     print "    ########################################################################"
+    if sys.argv[1] == 'TS':
+        ts(cpu_pc, meme)
+    load = LOAD.create(d_t=str(datetime.datetime.now()), cpu_l='{}%'.format(str(cpu_pc)), ram_l='{}%'.format(str(meme)),
+                       ts_log_stat="Logged to TS. Answer is: {} and that's {}".format(str(status), str(reason)))
+    load.save()
+
+
+def ts(cpu_pc, meme):
+    params = urllib.urlencode({'field1': cpu_pc, 'field2': meme, 'key': TStoken})
+    headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
+    conn = httplib.HTTPConnection("api.thingspeak.com:80")
+    conn.request("POST", "/update", params, headers)
+    response = conn.getresponse()
+    responsee = [(response.status, response.reason)]
     for (status, reason) in responsee:
         print "    ##             Logged to TS. Answer is: {} and that's {}             ##".format(str(status),
                                                                                                    str(reason))
     print "    ########################################################################"
-    load = LOAD.create(d_t=str(datetime.datetime.now()), cpu_l='{}%'.format(str(cpu_pc)), ram_l='{}%'.format(str(meme)),
-                       ts_log_stat="Logged to TS. Answer is: {} and that's {}".format(str(status), str(reason)))
-    load.save()
     data = response.read()
     conn.close()
 
