@@ -70,3 +70,5 @@ Returns a link to my telegram:)
 ### Usage preview
 
 ![msg](https://github.com/EKOsh/TeleMonBot/blob/master/msg.jpg)
+
+[![ts](https://github.com/EKOsh/TeleMonBot/blob/master/ts.jpg)](https://thingspeak.com/channels/112493)
