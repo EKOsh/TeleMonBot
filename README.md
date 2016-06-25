@@ -66,3 +66,7 @@ Final:
 > Who is your creator?
 
 Returns a link to my telegram:)
+
+### Usage preview
+
+![msg](https://github.com/EKOsh/TeleMonBot/blob/master/msg.jpg)
