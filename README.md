@@ -6,6 +6,8 @@ Python 2.7 script
 Write to my bot and see how it works ([List of commands](https://github.com/EKOsh/TeleMonBot/blob/master/README.md#command-list)):
 > https://telegram.me/EKOshTower_bot
 
+Be patient - it does not work 24/7
+
 Used python libraries: psutil, telepot, PyQt4 and peewee
 > Don't install them, the code will install them itself
 
