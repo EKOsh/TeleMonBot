@@ -38,6 +38,34 @@ With ThingSpeak (if you've added the code):
 
 > sudo python Main.py TS
 
+## Installation (Windows):
+
+- Intstall python 2.7.* (don't forget to add it to PATH):
+
+> https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi
+
+- Download and install psutil library:
+
+> https://pypi.python.org/pypi/psutil#downloads
+
+- Open console and say there:
+
+> pip install psutil geocoder uptime telepot peewee
+
+- Download and install PyQt4 binary:
+
+> https://riverbankcomputing.com/software/pyqt/download
+
+- Download and unzip this repo
+
+- Run the *dbcreate.py* file
+
+- Open and edit *config.ini* file (add the API key of your bot)
+
+- Run it!
+
+> Double-click *Main.py*
+
 ## If everything is OK, you will get your terminal look like this:
 
 ![Terminal](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
