@@ -6,7 +6,7 @@ Python 2.7 script
 Write to my bot and see how it works ([List of commands](https://github.com/EKOsh/TeleMonBot/blob/master/README.md#command-list)):
 > https://telegram.me/EKOshTower_bot
 
-Be patient - it does not work 24/7
+Be patient - it doesn't work 24/7
 
 Used python libraries: psutil, telepot, PyQt4 and peewee
 > Don't install them, the code will install them itself
@@ -66,7 +66,7 @@ With ThingSpeak (if you've added the code):
 
 > Double-click *Main.py*
 
-## If everything is OK, you will get your terminal look like this:
+## If everything is OK, you will get your terminal that looks like this:
 
 ![Terminal](https://github.com/EKOsh/TeleMonBot/blob/master/terminal.png)
 
@@ -87,7 +87,7 @@ And time:
 Sends you a screenshot:
 > Screenshot
 
-Tells where is he:
+Tells where he is:
 > Where are you?
 
 Bot says what you ask him to say:
