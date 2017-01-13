@@ -5,9 +5,6 @@ import time
 import datetime
 import telepot
 import os
-import random
-import httplib, urllib
-from PyQt4.QtGui import *
 from uptime import uptime as uppp
 from peewee import *
 import ConfigParser
@@ -28,9 +25,7 @@ def ConfigSectionMap(section):
             dict1[option] = None
     return dict1
 global TGtoken
-global TStoken
 TGtoken = ConfigSectionMap("Tokens")['telegram']
-TStoken = ConfigSectionMap("Tokens")['thingspeak']
 
 # Connecting database
 db = SqliteDatabase('botdb.db')
@@ -60,9 +55,6 @@ last_worktime = 0
 last_idletime = 0
 global command
 global bash
-global globrand
-global status
-global reason
 
 # Logo:)
 def bottt():
@@ -84,32 +76,10 @@ def doit():
     cpu_pc = cpu_percent()
     cls()
     bottt()
-    print "    ##             Cpu load is: " + str(cpu_pc) + "%. " + "Memory load is: " + str(
-        virtual_memory().percent) + "%.             ##"
+    print "    ##             Carga de CPU:" + str(cpu_pc) + "%. " + " Memoria usada: " + str(virtual_memory().percent) + "%.             ##"
     print "    ########################################################################"
-    if sys.argv == 'TS':
-        ts(cpu_pc, meme)
-    else:
-        status = 'Logging'
-        reason = 'Disabled'
-    load = LOAD.create(d_t=str(datetime.datetime.now()), cpu_l='{}%'.format(str(cpu_pc)), ram_l='{}%'.format(str(virtual_memory().percent)),
-                       ts_log_stat="Logged to TS. Answer is: {} and that's {}".format(str(status), str(reason)))
+    load = LOAD.create(d_t=str(datetime.datetime.now()), cpu_l='{}%'.format(str(cpu_pc)), ram_l='{}%'.format(str(virtual_memory().percent)), ts_log_stat="Off")
     load.save()
-
-# ThingSpeak function, called by doit(), if you runned the code with 'TS' argument
-def ts(cpu_pc, meme):
-    params = urllib.urlencode({'field1': cpu_pc, 'field2': meme, 'key': TStoken})
-    headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
-    conn = httplib.HTTPConnection("api.thingspeak.com:80")
-    conn.request("POST", "/update", params, headers)
-    response = conn.getresponse()
-    responsee = [(response.status, response.reason)]
-    for (status, reason) in responsee:
-        print "    ##             Logged to TS. Answer is: {} and that's {}             ##".format(str(status),
-                                                                                                   str(reason))
-    print "    ########################################################################"
-    data = response.read()
-    conn.close()
 
 # Terminal cleaning
 def cls():
@@ -121,51 +91,32 @@ def handle(msg):
     command = msg['text']
     massa = MSGS.create(msg=command, d_t=str(datetime.datetime.now()), from_who=chat_id)
     massa.save()
-    print 'Got a command: %s' % command, 'From: %s' % chat_id
-    globrand = random.randint(0, 10)
-    co_list(chat_id, command, globrand)
+    print 'Recibida orden: %s' % command, 'De: %s' % chat_id
+    co_list(chat_id, command)
 
 bot = telepot.Bot(TGtoken)
 bot.message_loop(handle)
 
 # Function of bot commands
-def co_list(chat_id, command, globrand):
-    if (command == 'Where are you?'):
-        import geocoder
-        import urllib
-        url = 'http://myexternalip.com/raw'
-        bot.sendLocation(chat_id, geocoder.ip(urllib.urlopen(url).read()).latlng[0], geocoder.ip(urllib.urlopen(url).read()).latlng[1])
+def co_list(chat_id, command):
     mystring = command
-    if (mystring.partition(" ")[0] == 'Say,'):
-        vari = mystring.partition(" ")[2]
-        if globrand <= 5:
-            bot.sendMessage(chat_id, vari.rpartition('or')[0])
-        else:
-            bot.sendMessage(chat_id, vari.rpartition('or')[2])
-    if (command == 'Where are you all?'):
-        bot.sendMessage(chat_id, 'I am here!')
-    if (command == 'Screenshot'):
-        app = QApplication(sys.argv)
-        QPixmap.grabWindow(QApplication.desktop().winId()).save('screenshot.jpg', 'jpg')
-        bot.sendPhoto(chat_id, open('screenshot.jpg', 'rb'))
-    if (command == 'RAM usage'):
-        bot.sendMessage(chat_id, 'Nearly {}% of RAM is used.'.format(virtual_memory().percent))
-    if (command == 'Who is your creator?'):
-        bot.sendMessage(chat_id, 'His nick is E_KOsh...')
-        bot.sendMessage(chat_id, "You might want to write him... Don't be so shy - @E_KOsh")
-    if (command == 'CPU usage'):
-        bot.sendMessage(chat_id, "About {}% of my CPU power is used.".format(cpu_percent()))
-    if (command == 'What is the time?'):
+    if (mystring.partition(" ")[0] == 'Di'):
+        bot.sendMessage(chat_id, mystring.partition(" ")[2])
+    if (command == '/ram'):
+        bot.sendMessage(chat_id, 'Estoy gastando un {}% de mi RAM.'.format(virtual_memory().percent))
+    if (command == '/cpu'):
+        bot.sendMessage(chat_id, "Trabajo a un {}% de mi CPU.".format(cpu_percent()))
+    if (command == '/hora'):
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
-    if (command == 'Uptime'):
+    if (command == '/curro'):
         u = round(uppp() / 3600, 1)
-        bot.sendMessage(chat_id, 'I am already working for {} hours.'.format(u))
+        bot.sendMessage(chat_id, 'Ya llevo unas {} horas currando, negrero.'.format(u))
 
 # Startup welcoming and a tick to DB with powerup state
 cls()
 bottt()
-print 'Connection established'
-print 'I am listening, Father...'
+print 'Conexion establecida'
+print 'Te escucho, Padre...'
 powered = ON.create(power_on_state='OK', d_t=str(datetime.datetime.now()))
 powered.save()
 
