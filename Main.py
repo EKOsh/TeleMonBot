@@ -76,7 +76,7 @@ def doit():
     cpu_pc = cpu_percent()
     cls()
     bottt()
-    print "    ##             Carga de CPU:" + str(cpu_pc) + "%. " + " Memoria usada: " + str(virtual_memory().percent) + "%.             ##"
+    print "    ##            Carga de CPU: " + str(cpu_pc) + "%. " + " Memoria usada: " + str(virtual_memory().percent) + "%.            ##"
     print "    ########################################################################"
     load = LOAD.create(d_t=str(datetime.datetime.now()), cpu_l='{}%'.format(str(cpu_pc)), ram_l='{}%'.format(str(virtual_memory().percent)), ts_log_stat="Off")
     load.save()
