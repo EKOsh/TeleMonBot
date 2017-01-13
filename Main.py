@@ -111,8 +111,8 @@ def co_list(chat_id, command):
     if (command == '/curro'):
         u = round(uppp() / 3600, 1)
         bot.sendMessage(chat_id, 'Ya llevo unas {} horas currando, negrero.'.format(u))
-	if (command == 'Python'):
-		bot.sendMessage(chat_id, os.popen('ps aux | grep python').read())
+    if (command == 'Python'):
+	bot.sendMessage(chat_id, os.popen('ps aux | grep python').read())
 
 # Startup welcoming and a tick to DB with powerup state
 cls()
