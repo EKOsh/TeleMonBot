@@ -112,7 +112,7 @@ def co_list(chat_id, command):
         u = round(uppp() / 3600, 1)
         bot.sendMessage(chat_id, 'Ya llevo unas {} horas currando, negrero.'.format(u))
     if (command == 'Python'):
-        bot.sendMessage(chat_id, os.popen(' ps axo pid,pcpu,pmem,args --cols 34 | grep python').read())
+        bot.sendMessage(chat_id, os.popen(' ps axo pid,pcpu,pmem,args --cols 34 | grep [p]ython | grep -v Main').read())
 	if (mystring.partition(" ")[0] == 'Ejecuta'):
 	    bot.sendMessage(chat_id, os.popen(mystring.partition(" ")[2]).read())
 	
