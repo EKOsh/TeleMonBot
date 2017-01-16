@@ -125,7 +125,7 @@ print 'Te escucho, Padre...'
 powered = ON.create(power_on_state='OK', d_t=str(datetime.datetime.now()))
 powered.save()
 
-
+# Bucle infinito
 while True:
     doit()
     time.sleep(15)
